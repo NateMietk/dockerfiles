@@ -1,20 +1,20 @@
-# r-spatial-aws
+# r-spatial
 
-Docker container with R, RStudio, various spatial packages, and the tidyverse, based on the [rocker/geospatial](https://github.com/rocker-org/geospatial) image.
+Docker container with R, RStudio, various spatial packages, and the tidyverse, based on the [earthlab/r-spatial-aws](https://github.com/earthlab/dockerfiles/tree/master/r-spatial-aws) image.
 
 ## How to use
 
 Download and run this image using the following commands:
 
 ```
-docker pull nathanmietkiewicz/r-spatial-aws
-docker run -i -t nathanmietkiewicz/r-spatial-aws /bin/bash
+docker pull nathanmietkiewicz/r-spatial
+docker run -i -t nathanmietkiewicz/r-spatial /bin/bash
 ```    
 
 To use Rstudio:
 
 ```
-docker run -d -p 8787:8787 nathanmietkiewicz/r-spatial-aws
+docker run -d -p 8787:8787 nathanmietkiewicz/r-spatial
 ```
 
 In a web browser, navigate to localhost:8787 (on linux) or on a Mac, substitute the location pointed to by `docker-machine ip default` for `localhost`.
