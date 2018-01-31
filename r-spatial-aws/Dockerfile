@@ -1,6 +1,6 @@
 FROM rocker/rstudio:latest
 
-# much below is from the rocker/geospatial Dockerfile
+# much below is from the rocker/geospatial and earthlab/r-spatial-aws Dockerfile
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
