@@ -10,7 +10,8 @@ RUN apt-get update \
     protobuf-compiler
 
 RUN install2.r --error \
-    tmap 
+    tmap \
+    ggmap
 
 EXPOSE 8787
 
