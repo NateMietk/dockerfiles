@@ -27,7 +27,7 @@ RUN install2.r --error \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 
-# install related packages
+# install caret dependencies packages
 RUN install2.r \
     caretEnsemble \
     ada \
@@ -143,6 +143,7 @@ RUN install2.r \
 RUN install2.r --error \
     tmap \
     ggmap \
+&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 EXPOSE 8787
 
