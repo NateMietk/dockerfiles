@@ -5,16 +5,16 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     libcairo2-dev \
     libcurl4-openssl-dev \
-    libjq-dev \ 
+    libjq-dev \
     libprotobuf-dev \
     libv8-3.14-dev \
-    libxml2-dev \ 
+    libxml2-dev \
     protobuf-compiler
-    
+
 # install caret
 RUN install2.r --error \
     minqa \
-    nloptr \ 
+    nloptr \
     RcppEigen \
     profileModel \
     pbkrtest \
@@ -50,6 +50,8 @@ RUN install2.r --error \
     deepboost \
     deepnet \
     dimRED \
+    deepboost \
+    deepnet \
     e1071 \
     earth \
     elasticnet \
@@ -82,14 +84,13 @@ RUN install2.r --error \
     lars \
     lava \
     leaps \
-    lme4 \
     logicFS \
     LogicReg \
     MASS \
     mboost \
     mda \
     mgcv \
-    ModelMetrics \ 
+    ModelMetrics \
     monomvn \
     neuralnet \
     nnet \
@@ -122,6 +123,8 @@ RUN install2.r --error \
     relaxo \
     rFerns \
     robustbase \
+    relaxo \
+    rFerns \
     robustDA \
     rocc \
     rotationForest \
@@ -151,13 +154,12 @@ RUN install2.r --error \
     VGAM \
     wsrf \
     xgboost \
-    
+
 # install spatial packages
-RUN install2.r --error \   
+RUN install2.r --error \
     tmap \
     ggmap \
 
 EXPOSE 8787
 
 CMD ["/init"]
-
