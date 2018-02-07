@@ -24,6 +24,8 @@ RUN install2.r --error \
     car \
     BradleyTerry2 \
     caret \
+    tmap \
+    ggmap \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 
@@ -137,12 +139,6 @@ RUN install2.r \
     VGAM \
     wsrf \
     xgboost \
-&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds
-
-# install spatial packages
-RUN install2.r --error \
-    tmap \
-    ggmap \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 EXPOSE 8787
