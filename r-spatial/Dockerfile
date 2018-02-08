@@ -26,6 +26,8 @@ RUN install2.r --error \
     caret \
     tmap \
     ggmap \
+    viridis \
+    viridisLite \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 
