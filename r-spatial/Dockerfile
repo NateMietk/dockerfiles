@@ -38,7 +38,7 @@ RUN install2.r --error \
     neuralnet \
     randomForest \
     rpart \
-    rPython \
+    rPython
     
 EXPOSE 8787
 
