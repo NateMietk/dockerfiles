@@ -26,6 +26,8 @@ RUN conda install --yes -c conda-forge \
     'cartopy' \
     'gdal=2.1.3' \
     'geopandas' \
+    `shapely` \
+    `geojsonio` \
     'awscli' 
 
 RUN pip install git+https://github.com/developmentseed/landsat-util.git
