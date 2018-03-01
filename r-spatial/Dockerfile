@@ -29,8 +29,6 @@ RUN install2.r --error \
     ## install spatial mapping
     tmap \
     ggmap \
-    viridis \
-    viridisLite \
     
     ## install caret dependencies packages
     caretEnsemble \
