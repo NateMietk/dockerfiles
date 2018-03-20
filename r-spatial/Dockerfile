@@ -13,13 +13,12 @@ RUN apt-get update \
     texlive-fonts-extra \
     texlive-latex-extra
 
-RUN install2.r --error \
-    ggmap \
-    && R -e "devtools::install_github("hunzikp/velox")" \
-    && R -e "devtools::install_github("mtennekes/tmaptools")" \
-    && R -e "devtools::install_github("mtennekes/tmap")" \
-    && R -e "devtools::install_github('sjmgarnier/viridis')" \
-    && R -e "devtools::install_github("ecohealthalliance/fasterize")"
+RUN R -e "install.packages('fasterize',dependencies=TRUE, repos='http://cran.rstudio.com/')"\
+RUN R -e "install.packages('ggmap',dependencies=TRUE, repos='http://cran.rstudio.com/')"\
+RUN R -e "install.packages('tmaptools',dependencies=TRUE, repos='http://cran.rstudio.com/')"\
+RUN R -e "install.packages('tmap',dependencies=TRUE, repos='http://cran.rstudio.com/')"\
+RUN R -e "install.packages('velox',dependencies=TRUE, repos='http://cran.rstudio.com/')"\
+RUN R -e "install.packages('viridis',dependencies=TRUE, repos='http://cran.rstudio.com/')"\
 
 EXPOSE 8787
 
