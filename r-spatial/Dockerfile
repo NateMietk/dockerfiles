@@ -9,37 +9,16 @@ RUN apt-get update \
     libprotobuf-dev \
     libv8-3.14-dev \
     libxml2-dev \
-    protobuf-compiler
+    protobuf-compiler \
+    texlive-fonts-extra \
+    texlive-latex-extra
 
 RUN install2.r --error \
-
-    ## install caret
-    minqa \
-    nloptr \
-    RcppEigen \
-    profileModel \
-    pbkrtest \
-    lme4 \
-    brglm \
-    gtools \
-    car \
-    BradleyTerry2 \
-    caret \
-
-    ## install spatial mapping
+    geoR \
+    geosphere \
     tmap \
     ggmap \
     velox \
-
-    ## install caret dependencies packages
-    caretEnsemble \
-    MASS \
-    neuralnet \
-    randomForest \
-    rpart \
-    rPython \
-
-    ## from GitHub
     && R -e "devtools::install_github('sjmgarnier/viridis')" \
     && R -e "devtools::install_github("ecohealthalliance/fasterize")"
 
