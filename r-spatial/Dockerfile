@@ -25,12 +25,12 @@ RUN install2.r --error \
     car \
     BradleyTerry2 \
     caret \
-    
+
     ## install spatial mapping
     tmap \
     ggmap \
     velox \
-    
+
     ## install caret dependencies packages
     caretEnsemble \
     MASS \
@@ -38,11 +38,11 @@ RUN install2.r --error \
     randomForest \
     rpart \
     rPython \
-    
+
     ## from GitHub
     && R -e "devtools::install_github('sjmgarnier/viridis')" \
     && R -e "devtools::install_github("ecohealthalliance/fasterize")"
-    
+
 EXPOSE 8787
 
 CMD ["/init"]
