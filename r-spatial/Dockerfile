@@ -14,11 +14,10 @@ RUN apt-get update \
     texlive-latex-extra
 
 RUN install2.r --error \
-    geoR \
-    geosphere \
-    tmap \
     ggmap \
-    velox \
+    && R -e "devtools::install_github("hunzikp/velox")" \
+    && R -e "devtools::install_github("mtennekes/tmaptools")" \
+    && R -e "devtools::install_github("mtennekes/tmap")" \
     && R -e "devtools::install_github('sjmgarnier/viridis')" \
     && R -e "devtools::install_github("ecohealthalliance/fasterize")"
 
