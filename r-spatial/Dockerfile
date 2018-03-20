@@ -29,8 +29,7 @@ RUN install2.r --error \
     ## install spatial mapping
     tmap \
     ggmap \
-    viridis \
-    viridisLite \
+    velox \
     
     ## install caret dependencies packages
     caretEnsemble \
@@ -38,7 +37,11 @@ RUN install2.r --error \
     neuralnet \
     randomForest \
     rpart \
-    rPython
+    rPython \
+    
+    ## from GitHub
+    && R -e "devtools::install_github('sjmgarnier/viridis')" \
+    && R -e "devtools::install_github("ecohealthalliance/fasterize")"
     
 EXPOSE 8787
 
