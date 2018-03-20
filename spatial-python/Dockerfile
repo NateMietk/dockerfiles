@@ -1,4 +1,4 @@
-FROM mikebirdgeneau/jupyterlab
+FROM mikebirdgeneau/jupyterlab:latest
 
 MAINTAINER Nate Mietkiewicz <nathan.mietkiewicz@colorado.edu>
 
@@ -29,6 +29,7 @@ RUN conda install --yes \
 RUN conda install --yes -c conda-forge \
     'cartopy' \
     'gdal=2.1.3' \
+    `geojsonio` \
     'geopandas' \
     'awscli' 
 
