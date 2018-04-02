@@ -16,6 +16,7 @@ RUN apt-get update \
 RUN R -e "install.packages('fasterize',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('ggmap',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('lwgeom',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+RUN R -e "install.packages('lme4',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('tabularaster',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('tmaptools',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('tmap',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
