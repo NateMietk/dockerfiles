@@ -11,17 +11,19 @@ RUN apt-get update \
     libxml2-dev \
     protobuf-compiler
 
-RUN R -e "install.packages('ggmap',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-RUN R -e "install.packages('lwgeom',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-RUN R -e "install.packages('lme4',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-RUN R -e "install.packages('mblm',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-RUN R -e "install.packages('nabor',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-RUN R -e "install.packages('psycho',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-RUN R -e "install.packages('tabularaster',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-RUN R -e "install.packages('tmaptools',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-RUN R -e "install.packages('tmap',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-RUN R -e "install.packages('velox',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-RUN R -e "install.packages('viridis',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+
+RUN install2.r --error \
+    ggmap \
+    lwgeom \
+    lme4 \
+    mblm \
+    nabor \
+    psycho \
+    tmaptools \
+    tmap \
+    ## from GitHub
+  && R -e "install_github("hadley/rlang", dependencies = TRUE, force = TRUE)" \
+  && R -e "install_github("tidyverse/ggplot2",force=TRUE)"
 
 EXPOSE 8787
 
