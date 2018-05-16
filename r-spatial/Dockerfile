@@ -1,4 +1,4 @@
-FROM earthlab/r-spatial-aws
+FROM earthlab/spatialverse-aws
 
 
 RUN apt-get update \
@@ -9,9 +9,7 @@ RUN apt-get update \
     libprotobuf-dev \
     libv8-3.14-dev \
     libxml2-dev \
-    protobuf-compiler \
-    texlive-fonts-extra \
-    texlive-latex-extra
+    protobuf-compiler
 
 RUN R -e "install.packages('ggmap',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('lwgeom',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
