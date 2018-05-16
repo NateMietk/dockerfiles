@@ -13,12 +13,12 @@ RUN apt-get update \
     texlive-fonts-extra \
     texlive-latex-extra
 
-RUN R -e "install.packages('fasterize',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('ggmap',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('lwgeom',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('lme4',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('mblm',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('nabor',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+RUN R -e "install.packages('psycho',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('tabularaster',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('tmaptools',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('tmap',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
