@@ -5,12 +5,8 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     libcairo2-dev \
     libcurl4-openssl-dev \
-    libjq-dev \
-    libprotobuf-dev \
     libv8-3.14-dev \
-    libxml2-dev \
-    protobuf-compiler
-
+    libxml2-dev 
 
 RUN install2.r --error \
     ggmap \

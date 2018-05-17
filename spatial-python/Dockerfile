@@ -2,9 +2,6 @@ FROM jupyter/scipy-notebook
 
 MAINTAINER Nate Mietkiewicz <nathan.mietkiewicz@colorado.edu>
 
-RUN conda install --yes -c conda-forge \
-    `geojsonio`
-
 RUN apt-get update && \
     apt-get install -y libfreetype6-dev pkg-config libx11-dev && \
     apt-get clean && \
