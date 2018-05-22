@@ -6,7 +6,7 @@ RUN apt-get update \
     libcairo2-dev \
     libcurl4-openssl-dev \
     libv8-3.14-dev \
-    libxml2-dev 
+    libxml2-dev
 
 RUN install2.r --error \
     ggmap \
@@ -16,10 +16,7 @@ RUN install2.r --error \
     nabor \
     psycho \
     tmaptools \
-    tmap \
-    ## from GitHub
-  && R -e "install_github("hadley/rlang", dependencies = TRUE, force = TRUE)" \
-  && R -e "install_github("tidyverse/ggplot2",force=TRUE)"
+    tmap
 
 EXPOSE 8787
 
