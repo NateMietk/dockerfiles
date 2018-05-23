@@ -8,13 +8,13 @@ RUN apt-get update \
     libv8-3.14-dev \
     libxml2-dev
 
-RUN install2.r --error \
-    ggmap \
-    lwgeom \
-    lme4 \
-    mblm \
-    nabor \
-    psycho
+RUN R -e "install.packages('fasterize',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+RUN R -e "install.packages('ggmap',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+RUN R -e "install.packages('lwgeom',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+RUN R -e "install.packages('lme4',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+RUN R -e "install.packages('nabor',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+RUN R -e "install.packages('tabularaster',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+RUN R -e "install.packages('velox',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 
 EXPOSE 8787
 
