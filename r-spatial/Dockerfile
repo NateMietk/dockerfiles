@@ -1,4 +1,12 @@
-FROM earthlab/spatialverse-aws
+FROM earthlab/r-spatial-aws
+
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    libcairo2-dev \
+    libcurl4-openssl-dev \
+    libv8-3.14-dev \
+    libxml2-dev
 
 RUN install2.r --error \
     ggmap \
@@ -6,9 +14,7 @@ RUN install2.r --error \
     lme4 \
     mblm \
     nabor \
-    psycho \
-    tmaptools \
-    tmap
+    psycho
 
 EXPOSE 8787
 
