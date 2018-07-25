@@ -10,6 +10,7 @@ RUN apt-get update \
 RUN R -e "install.packages('fasterize',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('ggmap',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('kableExtra',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+RUN R -e "install.packages('Hmisc',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('lwgeom',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('lme4',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('mblm',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
