@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         rsync \
         software-properties-common \
         unzip \
+        libxml2-dev \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -30,17 +31,30 @@ RUN pip --no-cache-dir install \
         jupyter \
         matplotlib \
         numpy \
-       scipy \
+        scipy \
+        keras \
+        h5py \
         && \
     python -m ipykernel.kernelspec
 
+RUN pip install tensorflow
+
 RUN pip --no-cache-dir install \
-  --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0rc0-cp27-none-linux_x86_64.whl
+  --upgrade tensorflow
+  
+RUN pip --no-cache-dir install virtualenv
 
 RUN install2.r --error \
-    devtools
+    devtools \
+    tensorflow \
+    keras \
+    neuralnet \
+    ISLR \
+    caTools \
+    tidyverse
     
-RUN R -e "devtools::install_github('rstudio/tensorflow')"
+RUN R -e "tensorflow::install_tensorflow(version = "gpu")"
+
+RUN R -e "keras::install_keras(tensorflow = "gpu")"
 
 CMD ["/init"]
-
