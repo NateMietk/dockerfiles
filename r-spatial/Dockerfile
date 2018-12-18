@@ -19,6 +19,8 @@ RUN R -e "install.packages('pbapply',dependencies=TRUE, repos='http://cran.rstud
 RUN R -e "install.packages('tabularaster',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 RUN R -e "install.packages('velox',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 
+getURL
+
 EXPOSE 8787
 
 CMD ["/init"]
