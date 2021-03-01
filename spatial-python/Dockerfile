@@ -14,7 +14,6 @@ USER $NB_USER
 RUN conda config --remove channels defaults && \
   conda config --add channels conda-forge && \
   conda install --yes -c conda-forge \
-    arcpy \
     basemap \
     cartopy \
     gdal \
