@@ -29,6 +29,13 @@ RUN conda config --remove channels defaults && \
     pandas \
     pyhdf \
     pysal \
-    xarray
+    xarray && \
+    conda clean --all -f -y && \
+    fix-permissions "${CONDA_DIR}" && \
+    fix-permissions "/home/${NB_USER}"
 
 RUN ipcluster nbextension enable --user
+
+USER $NB_UID
+
+WORKDIR $HOME
