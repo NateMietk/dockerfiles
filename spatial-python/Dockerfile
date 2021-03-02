@@ -9,7 +9,6 @@ USER root
 
 RUN apt-get update && \
     apt-get install -y libfreetype6-dev pkg-config libx11-dev \
-        git \ && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
