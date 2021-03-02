@@ -1,11 +1,15 @@
-FROM jupyter/scipy-notebook
+# Docker image timestamped 3/1/2021
+FROM jupyter/scipy-notebook:29edefbcb06a
 
 MAINTAINER Nate Mietkiewicz <nmietkiewicz@corelogic.org>
+
+ENV USE_SETUPCFG=0
 
 USER root
 
 RUN apt-get update && \
-    apt-get install -y libfreetype6-dev pkg-config libx11-dev && \
+    apt-get install -y libfreetype6-dev pkg-config libx11-dev \
+        git \ && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
@@ -32,7 +36,9 @@ RUN conda config --remove channels defaults && \
 
 RUN ipcluster nbextension enable --user
 
-COPY test.ipynb test.ipynb
+EXPOSE 8888
 
-RUN jupyter nbconvert --to notebook --execute test.ipynb && \
-    rm test*
+WORKDIR "/notebook/"
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD [ "jupyter", "notebook", "--ip=0.0.0.0", "--allow-root" ]
