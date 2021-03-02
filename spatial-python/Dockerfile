@@ -36,6 +36,7 @@ RUN conda config --remove channels defaults && \
 
 RUN ipcluster nbextension enable --user
 
-USER $NB_UID
+COPY test.ipynb test.ipynb
 
-WORKDIR $HOME
+RUN jupyter nbconvert --to notebook --execute test.ipynb && \
+    rm test*
