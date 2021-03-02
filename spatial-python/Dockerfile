@@ -3,8 +3,6 @@ FROM jupyter/scipy-notebook:29edefbcb06a
 
 MAINTAINER Nate Mietkiewicz <nmietkiewicz@corelogic.org>
 
-ENV USE_SETUPCFG=0
-
 USER root
 
 RUN apt-get update && \
