@@ -32,10 +32,3 @@ RUN conda config --remove channels defaults && \
     xarray
 
 RUN ipcluster nbextension enable --user
-
-EXPOSE 8888
-
-WORKDIR "/notebook/"
-
-ENTRYPOINT ["/entrypoint.sh"]
-CMD [ "jupyter", "notebook", "--ip=0.0.0.0", "--allow-root" ]
