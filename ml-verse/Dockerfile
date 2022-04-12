@@ -1,3 +1,3 @@
-FROM docker pull rocker/ml-verse:latest
+FROM rocker/ml-verse:latest
 
 EXPOSE 8080
